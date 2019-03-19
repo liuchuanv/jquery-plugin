@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery 千分位格式化插件</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript" src="./jquery.number.js"></script>
+		<style>
+			th {
+				width: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+
+			$(function(){
+				// 初始化千分位输入框
+				$("#number, #number2").number(true, 2);
+			});
+
+			// 获取输入数字的值
+			function getNumberValue() {
+				var number = $("#number").val();
+				$("#showNumber").text(number);
+			}
+
+			// 数字以千分位的形式显示
+			function showNumberValue2() {
+			    var number = $("#number2").val();
+			    $("#showNumber2").text($.number(number, 2));
+			}
+		</script>
+	</head>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="10" style="margin: 0 auto;">
+			<caption>Jquery 千分位格式化插件</caption>
+			<thead>
+				<th>输入</th>
+				<th>获取</th>
+				<th>值</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						数字：<input type="text" name="number" id="number" />
+					</td>
+					<td>
+						<button onclick="getNumberValue()">获取值</button>
+					</td>
+					<td>
+						<label id="showNumber"></label>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						数字：<input type="text" name="number2" id="number2" />
+					</td>
+					<td>
+						<button onclick="showNumberValue2()">以千分位形式显示</button>
+					</td>
+					<td>
+						<label id="showNumber2"></label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
